@@ -28,3 +28,24 @@ background-color: #E4EFF0;
 margin-left: 60%;
 background-color: #66BDD0;
 }
+
+/* History List */
+.flex-down-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.history-container {
+  background: white;
+  padding: 50px 40px;
+  box-shadow: 6px 6px 6px rgb(0 0 0 / 10%);
+  border-radius: 3px;
+}
+
+.scroll-list {
+  overflow: auto;
+  float: left;
+  height: 700px;
+  position: relative
+}
