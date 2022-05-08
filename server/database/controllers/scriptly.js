@@ -19,7 +19,7 @@ module.exports = {
     // positive, negative, trust, anger, joy
     const id = params.id;
     const { speech, email, name } = body;
-    console.log("speech ", speech, "email ", email, "name ", name)
+
     return User.findByIdAndUpdate(
       id,
       {
