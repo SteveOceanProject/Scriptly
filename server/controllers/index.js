@@ -23,6 +23,10 @@ module.exports = {
     .catch(err => console.log(err))
   },
   getUserDataFunction: (req, res) => {
+<<<<<<< HEAD
+=======
+    console.log('getUserData', req.params)
+>>>>>>> 0322d64aceabbb9d6831ea9af71303c23ffc6ed9
     const params = req.params
     controller.getUserInfo(params)
     .then(data => res.send(data))
