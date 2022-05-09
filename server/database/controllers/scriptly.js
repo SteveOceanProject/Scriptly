@@ -42,9 +42,19 @@ module.exports = {
     // positive, negative, trust, anger, joy
     console.log('params', params, 'inputs', inputs)
     const id = params.id;
+<<<<<<< HEAD
     const { body, email, name, url, positive, negative, trust, anger, joy } = inputs;
 
     return Speech.findByIdAndUpdate(
+=======
+    const { speech, email, name } = body;
+<<<<<<< HEAD
+    console.log("speech ", speech, "email ", email, "name ", name)
+=======
+
+>>>>>>> 0322d64aceabbb9d6831ea9af71303c23ffc6ed9
+    return User.findByIdAndUpdate(
+>>>>>>> main
       id,
       {
         name,
