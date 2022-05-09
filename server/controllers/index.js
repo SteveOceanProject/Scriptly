@@ -44,8 +44,6 @@ module.exports = {
     })
     .catch(err => console.log(err))
   },
-<<<<<<< HEAD
-=======
   getUserDataFunction: (req, res) => {
     console.log('getUserData', req.params)
     const params = req.params
@@ -53,6 +51,5 @@ module.exports = {
     .then(data => res.send(data))
     .catch(err => res.send(err))
   },
->>>>>>> main
 
 }
