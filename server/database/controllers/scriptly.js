@@ -43,6 +43,10 @@ module.exports = {
     console.log('params', params, 'inputs', inputs)
     const id = params.id;
     const { body, email, name, url, positive, negative, trust, anger, joy } = inputs;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bff78b3a56e3339cc08bef1d2336b97b2007fca9
     return Speech.findByIdAndUpdate(
       id,
       {
