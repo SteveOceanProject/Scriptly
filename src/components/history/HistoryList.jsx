@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import HistoryItem from './HistoryItem.jsx';
+import mockData from './mockData.js';
+import DoughnutChart from '../charts/DoughnutChart.jsx';
 
 function HistoryList(props) {
-  console.log(props)
+
+  const { id, title, name, email, speech } = mockData;
 
   // assume that data will be passed down through props in homepage
   const renderList = (arr) => {
@@ -9,26 +13,36 @@ function HistoryList(props) {
       return null;
     }
     return (
-      <div className="flex-down-container history-container">
+      <div>
         {arr.map((item) => (
           <HistoryItem
             key={item.id}
-            item={item}
+            date={item.date}
+            body={item.body}
+            analysis={item.analysis}
           />
         ))}
       </div>
     );
   };
-
-
   return (
-    <div>
+    <div className="flex-down-container history-list-container">
+      <h4>Speech History</h4>
       <div className="d-flex w-100 justify-content-between">
-        <h5 className="mb-1">Speech History</h5>
-        <small>Richard Feynman</small>
+        <h5 className="mb-1">{`Speech Title: ${title}`}</h5>
+        <div className="doughnut-medium ">
+          <DoughnutChart
+            analysis={speech[0].analysis}
+            labelsOn={true}
+          />
+        </div>
+        <small>{name}</small>
+      </div>
+      <div className="scroll-list">
+        {speech ? renderList(speech) : null}
+      </div>
     </div>
-  )
-
+  );
 }
 
 export default HistoryList;
