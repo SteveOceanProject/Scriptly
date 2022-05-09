@@ -43,10 +43,6 @@ module.exports = {
       res.send(data)
     })
     .catch(err => console.log(err))
-<<<<<<< HEAD
   }
-=======
-  },
->>>>>>> bff78b3a56e3339cc08bef1d2336b97b2007fca9
 
 }
