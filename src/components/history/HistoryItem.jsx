@@ -5,14 +5,19 @@ import {useRecoilState} from 'recoil';
 import Results from '../../results/Results.jsx';
 
 function HistoryItem(props) {
-  const { date, body, analysis } = props;
+  const { date, body, analysis, title } = props;
   const [showResults, setShowResults] = useRecoilState(resultsModal);
   let bodyPreview = body.slice(0, 150);
 
   console.log('inside result', showResults);
 
+  const sendResults = (e) => {
+     setShowResults(true);
+     console.log('insideitem',e);
+  }
+
   return (
-    <li className="speech-history-list-item" onClick={()=> { setShowResults(true) }}>
+    <li className="speech-history-list-item" onClick={(e)=> { sendResults(e) }}>
       <small className="speech-date">{date}</small>
       <div className="speech-preview-chart">
         <p className="speech-preview-body">{`${bodyPreview}...`}</p>
