@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DoughnutChart from '../charts/DoughnutChart.jsx';
 import {resultsModal, currentAnalysis2} from '../../atoms.jsx';
+import {resultsModal} from '../../atoms.jsx';
 import {useRecoilState} from 'recoil';
 import Results from '../../results/Results.jsx';
 
