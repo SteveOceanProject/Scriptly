@@ -3,34 +3,33 @@ import axios from 'axios';
 import HistoryItem from './HistoryItem.jsx';
 import mockData from './mockData.js';
 import DoughnutChart from '../charts/DoughnutChart.jsx';
-import {currentSpeechId} from '../../atoms.jsx';
-import {useRecoilState} from 'recoil';
+import { currentSpeechId } from '../../atoms.jsx';
+import { useRecoilState } from 'recoil';
 
-function HistoryList(props) {
-  const { id, title, name, email, speech } = mockData;
+function HistoryList() {
+  const { title, name, email, speech } = mockData;
   const [history, setHistory] = useState([]);
   const [currentId, setCurrentId] = useRecoilState(currentSpeechId);
 
   const getHistory = () => {
-    axios.get(`/speech/${currentSpeechId}`)
-      .then(res => {
-        setHistory(res.data[0].speeches)
-      })
-      .catch(err => new Error('FAIL!!!!!!'));
-  }
+    axios.get(`/history/${currentId}`)
+      .then((res) => setHistory(res.data[0]))
+      .catch(() => new Error('FAIL!!!!!!'));
+  };
+
+  console.log('inside history', history);
 
   useEffect(() => {
     getHistory();
-    }, []);
+  }, []);
 
-  // assume that data will be passed down through props in homepage
   const renderList = (arr) => {
     if (!arr) {
       return null;
     }
     return (
       <ul className="speech-version-list">
-        {arr.map((item, index) => (
+        {arr.map((item) => (
           <HistoryItem
             key={item._id}
             date={item.date}
