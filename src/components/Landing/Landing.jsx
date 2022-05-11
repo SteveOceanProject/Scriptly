@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import SignIn from '../SignIn.jsx';
+
 
 function Landing(props) {
 const {setLogin, login, setPage, page } = props;

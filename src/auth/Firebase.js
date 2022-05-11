@@ -1,3 +1,4 @@
+
 /* eslint-disable linebreak-style */
 import { initializeApp } from 'firebase/app';
 import {
@@ -5,6 +6,10 @@ import {
   signInWithPopup, createUserWithEmailAndPassword,
   signOut, signInWithEmailAndPassword,
 } from 'firebase/auth';
+
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from "firebase/auth";
+
 
 import { getStorage } from 'firebase/storage';
 import 'core-js/stable';
@@ -26,6 +31,7 @@ const provider = new GoogleAuthProvider();
 
 export const signInWithGoogle = async () => {
   await signInWithPopup(auth, provider)
+
     .then((result) => {
       const { email } = result.user;
       localStorage.setItem('email', email);
@@ -46,7 +52,6 @@ export const signInWithEmail = async (email, password) => {
       localStorage.clear();
       alert(err.code);
     });
-  localStorage.setItem('email', email);
 };
 
 export const createAccount = async (email, password) => {
@@ -61,6 +66,7 @@ export const createAccount = async (email, password) => {
 };
 
 export const monitorAuthState = () => {
+
   let result = false;
   onAuthStateChanged(auth, (user) => {
     if (user) {
