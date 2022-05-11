@@ -3,7 +3,7 @@ module.exports ={
     if (!text) {
       return new Error('Envalid Input')
     }
-    if (text.length == 0) {
+    if (text.length === 0) {
       return new Error('Empty Input')
     }
     const words= [];
