@@ -12,12 +12,12 @@ function HistoryList() {
   const [currentId, setCurrentId] = useRecoilState(currentSpeechId);
 
   const getHistory = () => {
-    axios.get(`/history/${currentId}`)
-      .then((res) => setHistory(res.data[0]))
-      .catch(() => new Error('FAIL!!!!!!'));
-  };
-
-  console.log('inside history', history);
+    axios.get(`/speech/${currentId}`)
+      .then(res => {
+        setHistory(res.data[0].speeches)
+      })
+      .catch(err => new Error('FAIL!!!!!!'));
+  }
 
   useEffect(() => {
     getHistory();
