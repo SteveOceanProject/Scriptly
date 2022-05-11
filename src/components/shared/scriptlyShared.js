@@ -43,7 +43,14 @@ module.exports ={
     let trustSum = 0;
 
     array.forEach((speechVersion) => {
-      const { anger, joy, negative, positive, totalCount, trust } = speechVersion.analysis;
+      const {
+        anger,
+        joy,
+        negative,
+        positive,
+        totalCount,
+        trust,
+      } = speechVersion.analysis;
       angerSum += anger;
       joySum += joy;
       negativeSum += negative;

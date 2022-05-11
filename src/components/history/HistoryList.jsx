@@ -13,10 +13,10 @@ function HistoryList(props) {
 
   const getHistory = () => {
     axios.get(`/speech/${currentId}`)
-      .then(res => {
+      .then((res) => {
         setHistory(res.data[0].speeches);
       })
-      .catch(err => new Error('FAIL!!!!!!'));
+      .catch(() => new Error('FAIL!!!!!!'));
   }
 
   useEffect(() => {
@@ -49,14 +49,14 @@ function HistoryList(props) {
     const sumVals = lib.sumToneValues(data);
     return (
       <>
-      <h5 className="mb-1">{`SpeechHistory`}</h5>
-      <small>{'Tone - All Versions'}</small>
-      <div className="doughnut-medium ">
-        <DoughnutChart
-          analysis={sumVals}
-          labelsOn={true}
-        />
-      </div>
+        <h5 className="mb-1">SpeechHistory</h5>
+        <small>Tone - All Versions</small>
+        <div className="doughnut-medium ">
+          <DoughnutChart
+            analysis={sumVals}
+            labelsOn={true}
+          />
+        </div>
       </>
     );
   };
