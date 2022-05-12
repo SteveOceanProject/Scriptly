@@ -41,7 +41,7 @@ export const signInWithEmail = async (email, password) => {
       localStorage.clear();
       alert(err.code)
     })
-  localStorage.setItem('email', email)
+
 }
 
 export const createAccount = async (email, password) => {
@@ -70,6 +70,7 @@ export const monitorAuthState = () => {
 }
 
 export const logOut = () => {
-  signOut(auth)
-  monitorAuthState()
+  signOut(auth);
+  monitorAuthState();
+  localStorage.clear();
 }
