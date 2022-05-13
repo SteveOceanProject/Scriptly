@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//var CronJob = require('cron').CronJob;
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,8 +9,6 @@ import LandingPage3 from './LandingPages/LandingPage3.jsx';
 function Carousel() {
   const [landingPage, setLandingPage] = useState(0);
   let carousel;
-
-
 
   const nextSlide = () => {
     setLandingPage(landingPage === 2 ? 0 : landingPage + 1);
@@ -41,8 +38,6 @@ function Carousel() {
   } else if (landingPage === 2) {
     carousel = <LandingPage3 />;
   }
-
-
 
   return (
     <>
